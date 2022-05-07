@@ -76,18 +76,21 @@ const update =(req, res, next)=>
 
 //mrigll
 const destory=(req,res,next) =>{
-    let BadgeID= req.body.BadgeID
-    Badge.findByIdAndRemove(BadgeID)
-    .then(()=>{
-        req.json({
-            message: 'Delete sucesse!'
-        })
-    })
-    .catch(error =>{
+    let _id = req.params.id;
+    Badge.findByIdAndDelete(_id)
+    .then(() => {
         res.json({
-            message:'an error Occured!'
-        })
-    })
+          message: "Delete sucess!",
+        });
+      })
+      .catch((error) => {
+          res.statusCode = 400;
+  
+        console.log(error);
+        res.json({
+          error,
+        });
+      });
 }
 
 module.exports={
