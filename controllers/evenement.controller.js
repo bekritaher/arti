@@ -15,18 +15,14 @@ const index = (req, res, next) => {
 
 //mrigl
 const show = (req, res, next) => {
- req= Evenement.findOne({ active: true })
-  .then((reponse) => {
-      res.json({
-        reponse,
-      }),
-        console.log("azerty", reponse);
+  var x =[]
+  Evenement.findOne({active:true}, (err,event)=>{
+    //   console.log(utilisateur.arts);
+    //   console.log(utilisateur.nom);
+    res.json(event.uri);
+ 
+       
     })
-    .catch((error) => { 
-      res.json({
-        message: "an error Occured",
-      });
-    });
 };
 
 //mrigl
