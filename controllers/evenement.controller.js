@@ -16,10 +16,10 @@ const index = (req, res, next) => {
 //mrigl
 const show = (req, res, next) => {
   var x =[]
-  Evenement.findOne({active:true}, (err,event)=>{
+  Evenement.findOne({active:true}, (err,evenement)=>{
     //   console.log(utilisateur.arts);
     //   console.log(utilisateur.nom);
-    res.json(event.uri);
+    res.json(evenement.uri);
  
        
     })
