@@ -154,18 +154,21 @@ const update =(req, res, next)=>
 //supprimer
 
 const destroy =(req,res,next) =>{
-  let id= req.body.id
-  Art.findByIdAndRemove(id)
-  .then(()=>{
-      req.json({
-          message: 'Art deleted successfully!'
-      })
+  let _id= req.params.id
+  Art.findByIdAndDelete(_id)
+  .then(() => {
+    res.json({
+      message: "Delete sucess!",
+    });
   })
-  .catch(error =>{
-      res.json({
-          message:'An error Occured!'
-      })
-  })
+  .catch((error) => {
+      res.statusCode = 400;
+
+    console.log(error);
+    res.json({
+      error,
+    });
+  });
 }
 
 
