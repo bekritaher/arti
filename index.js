@@ -244,7 +244,7 @@ app.use("/api/arts", require("./routes/art.route"));
 
 app.use('/api/partenaires', require("./routes/partenaire.route"))
 app.use('/api/evenement', require("./routes/evenement.route"))
-app.use('/api/Badge', require("./routes/badge.route"))
+app.use('/api/badges', require("./routes/badge.route"))
 app.use('/api/notifications', require("./routes/notification.route"))
 app.use("/api/Commande", require("./routes/commande.route"));
 app.use("/api/Panier", require("./routes/panier.route"));
