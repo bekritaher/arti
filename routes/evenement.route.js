@@ -6,6 +6,7 @@ const EvenementController = require('../controllers/evenement.controller')
 
 router.get('/index',EvenementController.index)
 router.get('/show',EvenementController.show)
+router.get('/shows',EvenementController.shows)
 router.get('/',EvenementController.index)
 router.post('/stores',EvenementController.stores)
 router.put('/update/:id',EvenementController.update)

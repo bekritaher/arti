@@ -12,7 +12,21 @@ const index = (req, res, next) => {
       res.json({ error });
     });
 };
-
+//mrigl
+const shows = (req, res, next) => {
+  req= Evenement.findOne({ active: true })
+   .then((reponse) => {
+       res.json({
+         reponse,
+       }),
+         console.log("azerty", reponse);
+     })
+     .catch((error) => { 
+       res.json({
+         message: "an error Occured",
+       });
+     });
+ };
 //mrigl
 const show = (req, res, next) => {
   var x =[]
@@ -187,4 +201,5 @@ module.exports = {
   stores,
   update,
   destory,
+  shows,
 };
