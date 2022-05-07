@@ -10,6 +10,7 @@ const index=(req, res, next) =>
 }
 
 
+
 //mrigl 
 const show = (req, res, next) => {
     let BadgeID = req.body.BadgeID

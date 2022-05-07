@@ -2,13 +2,22 @@ const Commande = require("../models/commande.model");
 
 //mrigl
 const index = (req, res, next) => {
-  Commande.find({ idUser: req.headers.idUser }).exec(function (err, data) {
+  Commande.find().exec(function (err, data) {
     if (err) res.status(500).send(err);
     else res.send(data);
   });
   //  console.log(req.headers)
 };
 
+const affich = (req, res, next) => {
+  Commande.find()
+    .then((commande) => {
+      res.json({ commande });
+    })
+    .catch((error) => {
+      res.json({ error });
+    });
+};
 //mrigl
 const show = (req, res, next) => {
   let Commandeid = req.body.Commandeid;
@@ -37,6 +46,7 @@ const AddCommande = (req, res, next) => {
   pan
     .save()
     .then((pan) => {
+      print("aaa");
       res.status(200).send(
         JSON.stringify({
           message: " Added Successfully!",
@@ -67,4 +77,5 @@ module.exports = {
   show,
   AddCommande,
   destory,
+  affich
 };
