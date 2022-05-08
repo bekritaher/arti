@@ -4,6 +4,7 @@ const path= require('path');
 const router = express.Router();
 
 const utilisateurController = require("../controllers/utilisateur.controller");
+const userEventController = require("../controllers/userEvent.controller");
 const { Utilisateur } = require("../models/utilisateur.model");
 
 router.get("/all",utilisateurController.index)
@@ -20,6 +21,8 @@ router.post("/unfollow",utilisateurController.unfollow)
 router.post("/send",utilisateurController.send)
 router.post("/findbyid",utilisateurController.findbyid)
 router.get("/gets",utilisateurController.gets)
+router.get("/addusertoevent/:utilisateur/:evenement",userEventController.add)
+
 
 
 
