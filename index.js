@@ -39,37 +39,37 @@ class Arta {
 
 
 
-const PORT = 9090;
-mongoose.connect("mongodb://localhost:27017/arti",{useNewUrlParser: true, useUnifiedTopology: true})
-    .then(()=>{
-        console.log("Database connected");
-    })
-    .catch((ex)=>{
-        console.log(ex);
-        console.log("Unable to connect to database");
-    })
+// const PORT = 9090;
+// mongoose.connect("mongodb://localhost:27017/arti",{useNewUrlParser: true, useUnifiedTopology: true})
+//     .then(()=>{
+//         console.log("Database connected");
+//     })
+//     .catch((ex)=>{
+//         console.log(ex);
+//         console.log("Unable to connect to database");
+//     })
 
 
-// require('dotenv').config()
+require('dotenv').config()
 
 
 
-// //Connecting DataBase
-// mongoose.connect(process.env.CONNECTION_STRING, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   dbName: 'Arti-DB',
+//Connecting DataBase
+mongoose.connect(process.env.CONNECTION_STRING, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  dbName: 'Arti-DB',
   
-// })
-// .then(()=> {
-//   console.log('DATABASE CONNECTED')
-// })
-// .catch((err) => {
-//   console.log(err)
-// })
+})
+.then(()=> {
+  console.log('DATABASE CONNECTED')
+})
+.catch((err) => {
+  console.log(err)
+})
 
-// app.use(morgan('dev'))
-// const PORT = process.env.PORT || 9090
+app.use(morgan('dev'))
+const PORT = process.env.PORT || 9090
 
 
 
